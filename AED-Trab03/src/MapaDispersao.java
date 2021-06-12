@@ -29,7 +29,8 @@ public class MapaDispersao<K, T> {
 			return false;
 		}
 		
-		tabela[hash] = (Lista<K, T>) dado;
+		tabela[hash].setChave(chave);
+		tabela[hash].setDado(dado);
 		return true;
 	}
 	
@@ -47,7 +48,7 @@ public class MapaDispersao<K, T> {
 		int hash = calcularHash(chave);
 		
 		for (int i = 0; i < tabela.length; i++) {
-			if (tabela[hash] == tabela[i]) {
+			if (tabela[hash].getChave() == tabela[i].getChave()) {
 				return (T) tabela[i];
 			}
 		}
@@ -58,7 +59,7 @@ public class MapaDispersao<K, T> {
 		int qtd = 0;
 		
 		for (int i = 0; i < tabela.length; i++) {
-			if (tabela[i] != null) {
+			if (tabela[i].getDado() != null) {
 				qtd+=1;
 			}
 		}
