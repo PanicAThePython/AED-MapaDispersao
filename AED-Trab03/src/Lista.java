@@ -1,21 +1,25 @@
+//João Vitor de Oliveira, Natália Sens Weise e Paulo Rubens de Moraes Leme Júnior
 
-public class Lista<K, T> {
+public interface Lista<K, T> {
 
-	private K chave;
-	private T dado;
-	
-	public K getChave() {
-		return chave;
-	}
-	public void setChave(K chave) {
-		this.chave = chave;
-	}
-	public T getDado() {
-		return dado;
-	}
-	public void setDado(T dado) {
-		this.dado = dado;
-	}
-	
-	
+	void inserir(K chave, T valor);
+
+	int buscar(T valor);
+
+	void retirar(T valor);
+
+	String toString();
+
+	boolean estaVazia();
+
+	Lista<K, T> copiar();
+
+	Lista<K, T> dividir();
+
+	int getTamanho();
+
+	T pegar(int posicao);
+
+
+
 }
